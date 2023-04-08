@@ -35,6 +35,21 @@ public class DialogContent extends Parent{
     @FindBy(xpath="//button[@type='submit']")
     private WebElement deleteDialogBtn;
 
+    @FindBy(xpath="//ms-add-button[contains(@tooltip,'ADD')]//button")
+    public WebElement addButton;
+
+    @FindBy(xpath="//ms-text-field[@formcontrolname='name']/input")
+    public WebElement nameInput;
+
+    @FindBy(xpath="//div[contains(text(),'successfully')]")
+    public WebElement successMessage;
+
+    @FindBy(xpath="//ms-save-button/button")
+    public WebElement saveButton;
+
+    @FindBy(xpath = "//ms-edit-button//span[@class='mat-button-wrapper']")
+    public WebElement editButton;
+
 
     public void deleteItem(String searchText){
 
@@ -54,6 +69,11 @@ public class DialogContent extends Parent{
     public WebElement getWebElement(String Button) {
 
         switch (Button) {
+            case "addButton" : return addButton;
+            case "nameInput" : return nameInput;
+            case "saveButton": return saveButton;
+            case "editButton": return editButton;
+
 
             default: return null;
         }
