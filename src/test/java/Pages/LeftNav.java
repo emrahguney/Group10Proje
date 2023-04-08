@@ -10,11 +10,23 @@ public class LeftNav extends Parent {
 
     public LeftNav() {PageFactory.initElements(WD.getDriver(),this);}
 
+    @FindBy(xpath = "//span[text()='Human Resources']")
+    private WebElement humanResources;
+
+    @FindBy(xpath = "(//span[text()='Setup'])[3]")
+    private WebElement setupHumanResources;
+
+    @FindBy(xpath = "//span[text()='Position Categories']")
+    private WebElement positionCategories;
+
 
     public WebElement getWebElement(String Button){
 
         switch (Button)
         {
+            case "humanResources": return humanResources;
+            case "setupHumanResources": return setupHumanResources;
+            case "positionCategories": return positionCategories;
 
 
             default: return null;
