@@ -73,10 +73,19 @@ public class DialogContent extends Parent{
             case "nameInput" : return nameInput;
             case "saveButton": return saveButton;
             case "editButton": return editButton;
+            case "searchInput": return searchInput;
 
 
             default: return null;
         }
 
     }
+
+    public void waitUntilRefresh(){
+
+        wait.until(ExpectedConditions.numberOfElementsToBe
+                (By.xpath("//fuse-progress-bar/*") , 0));
+
+    }
+
 }
