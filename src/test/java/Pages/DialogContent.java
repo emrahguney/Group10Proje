@@ -49,6 +49,8 @@ public class DialogContent extends Parent{
 
     @FindBy(xpath = "//ms-edit-button//span[@class='mat-button-wrapper']")
     public WebElement editButton;
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='shortName']/input")
+    public WebElement shortNameInput;
 
 
     public void deleteItem(String searchText){
@@ -74,6 +76,7 @@ public class DialogContent extends Parent{
             case "saveButton": return saveButton;
             case "editButton": return editButton;
             case "searchInput": return searchInput;
+            case "shortName":return shortNameInput;
 
 
             default: return null;
