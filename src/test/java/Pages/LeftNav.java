@@ -25,10 +25,25 @@ public class LeftNav extends Parent {
     @FindBy(xpath = "//span[text()='Positions']")
     private WebElement positionsTab;
 
+    @FindBy(xpath = "(//span[text()='Setup'])[1]")
+    private WebElement setup;
+
+
+    @FindBy(xpath = "(//span[text()='Parameters'])[1]")
+    private WebElement parameters;
+
+
+    @FindBy(xpath = "(//span[text()='Fields'])[1]")
+    private WebElement fields;
+
+
     public WebElement getWebElement(String Button){
 
         switch (Button)
         {
+            case "setup" : return setup;
+            case "parameters" : return parameters;
+            case "fields" : return fields;
             case "humanResources": return humanResources;
             case "setupHumanResources": return setupHumanResources;
             case "positionCategories": return positionCategories;
