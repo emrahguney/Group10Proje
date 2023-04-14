@@ -52,6 +52,13 @@ public class DialogContent extends Parent{
     @FindBy(xpath = "//ms-text-field[@formcontrolname='shortName']/input")
     public WebElement shortNameInput;
 
+    @FindBy(xpath="//div[contains(text(),'exists')]")
+    public WebElement alreadyExists;
+
+    @FindBy(xpath = "//div[contains(text(),'no data to display')]")
+    public WebElement noDataToDisplay;
+
+
 
     public void deleteItem(String searchText){
 
@@ -89,6 +96,12 @@ public class DialogContent extends Parent{
         wait.until(ExpectedConditions.numberOfElementsToBe
                 (By.xpath("//fuse-progress-bar/*") , 0));
 
+    }
+
+
+    public void clickOnSearchButton(){
+
+        searchButton.click();
     }
 
 }
