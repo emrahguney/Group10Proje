@@ -84,6 +84,7 @@ public class DialogContent extends Parent{
             case "editButton": return editButton;
             case "searchInput": return searchInput;
             case "shortName":return shortNameInput;
+            case "searchButton": return searchButton;
 
 
             default: return null;
