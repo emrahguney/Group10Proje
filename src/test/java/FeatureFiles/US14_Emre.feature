@@ -1,4 +1,4 @@
-Feature: Position Category Functionality
+Feature: Nationalities Functionality
 
   Background:
     Given Navigate to Campus
@@ -6,43 +6,43 @@ Feature: Position Category Functionality
     Then User should login succesfully
 
     And click on the element in LeftNav
-      | humanResources      |
-      | setupHumanResources |
-      | positionCategories  |
+      | setup         |
+      | parameters    |
+      | nationalities |
 
-  Scenario: Add Position Category
+  Scenario: Add Nationality
 
     And click on the element in Dialog
       | addButton |
 
     And user sending the key in Dialog Content
-      | nameInput | Head Officer |
+      | nameInput | Turkish1071 |
 
     And click on the element in Dialog
       | saveButton |
 
     Then success message should be displayed
 
-  Scenario: Add Position Category negative scenario
+    Scenario: Add Nationality negative scenario
 
     And click on the element in Dialog
       | addButton |
 
     And user sending the key in Dialog Content
-      | nameInput | Head Officer |
+      | nameInput | Turkish1071 |
 
     And click on the element in Dialog
       | saveButton |
 
     Then already exists message should be displayed
 
-  Scenario: Edit Position Category
+  Scenario: Editing nationality
 
     And user sending the key in Dialog Content
-      | searchInput | Head Officer |
+      | searchInput | Turkish1071 |
 
     And edit item which added in first scenario
-      | nameInput | Manager |
+      | nameInput | Turkish1453 |
 
     And click on the element in Dialog
       | saveButton |
@@ -52,26 +52,19 @@ Feature: Position Category Functionality
   Scenario: Deleting nationality
 
     And user sending the key in Dialog Content
-      | searchInput | Manager |
+      | searchInput | Turkish1453 |
 
     And user delete item from Dialog Content
-      | Manager |
+      | Turkish1453 |
 
     Then success message should be displayed
 
   Scenario: Deleting Nationality negative scenario
 
     And user sending the key in Dialog Content
-      | searchInput | Manager |
+      | searchInput | Turkish1453 |
 
     And click on the element in Dialog
       | searchButton |
 
     Then there is no data to display should be displayed
-
-
-
-
-
-
-
