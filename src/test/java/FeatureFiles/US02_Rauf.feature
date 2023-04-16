@@ -43,8 +43,10 @@ Feature: Attestations Functionality
     And user sending the key in Dialog Content
       | searchInput | Diploma |
 
+    And user click on search button
+
     And edit item which added in first scenario
-      | nameInput | Red diploma |
+      | nameInput | Red Diploma |
 
     And click on the element in Dialog
       | saveButton |
@@ -55,6 +57,8 @@ Feature: Attestations Functionality
 
     And user sending the key in Dialog Content
       | searchInput | Red Diploma |
+
+    And user click on search button
 
     And user delete item from Dialog Content
       | Red Diploma |
