@@ -29,6 +29,8 @@ Feature: Positions Functionality
     And user sending the key in Dialog Content
       | searchInput | SeniorJavaDevops |
 
+    And user click on search button
+
     And edit item which added in first scenario
       | nameInput | JuniorJavaDevops |
       | shortName | JJD              |
