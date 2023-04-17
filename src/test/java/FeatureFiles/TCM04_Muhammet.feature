@@ -24,6 +24,20 @@ Feature: School Field Functionality
 
     Then success message should be displayed
 
+  Scenario: Adding Fields negative scenario
+
+    And click on the element in Dialog
+      | addButton |
+
+    And user sending the key in Dialog Content
+      | nameInput | user1 |
+
+    And click on the element in Dialog
+      | saveButton |
+
+    Then already exists message should be displayed
+
+
   Scenario: Edit School Field
 
     And user sending the key in Dialog Content
@@ -46,4 +60,13 @@ Feature: School Field Functionality
       | user2 |
 
     Then success message should be displayed
+
+  Scenario: Deleting Fields negative scenario
+
+    And user sending the key in Dialog Content
+      | searchInput | user2 |
+
+    And user click on search button
+
+    Then there is no data to display should be displayed
 
