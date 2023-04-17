@@ -41,6 +41,9 @@ Feature: Position Category Functionality
     And user sending the key in Dialog Content
       | searchInput | Head Officer |
 
+    And click on the element in Dialog
+      | searchButton |
+
     And edit item which added in first scenario
       | nameInput | Manager |
 

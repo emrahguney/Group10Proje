@@ -41,6 +41,9 @@ Feature: Nationalities Functionality
     And user sending the key in Dialog Content
       | searchInput | Turkish1071 |
 
+    And click on the element in Dialog
+      | searchButton |
+
     And edit item which added in first scenario
       | nameInput | Turkish1453 |
 
