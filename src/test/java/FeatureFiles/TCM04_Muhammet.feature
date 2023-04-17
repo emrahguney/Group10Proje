@@ -43,6 +43,8 @@ Feature: School Field Functionality
     And user sending the key in Dialog Content
       | searchInput | user1 |
 
+    And user click on search button
+
     And edit item which added in first scenario
       | nameInput | user2 |
 
