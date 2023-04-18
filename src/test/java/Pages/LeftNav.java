@@ -45,33 +45,26 @@ public class LeftNav extends Parent {
     @FindBy(xpath = "//span[text()='Grade Levels']")
     private WebElement grandLevels;
 
+    @FindBy(xpath = "(//span[text()='Discounts'])[1]")
+    private WebElement discounts;
+
 
     public WebElement getWebElement(String Button) {
 
         switch (Button) {
-            case "setup":
-                return setup;
-            case "parameters":
-                return parameters;
-            case "fields":
-                return fields;
-            case "humanResources":
-                return humanResources;
-            case "setupHumanResources":
-                return setupHumanResources;
-            case "positionCategories":
-                return positionCategories;
-            case "attestations":
-                return attestations;
-            case "positionsTab":
-                return positionsTab;
-            case "nationalities":
-                return nationalities;
-            case "grandLevels":
-                return grandLevels;
+            case "setup": return setup;
+            case "parameters": return parameters;
+            case "fields": return fields;
+            case "humanResources": return humanResources;
+            case "setupHumanResources": return setupHumanResources;
+            case "positionCategories": return positionCategories;
+            case "attestations": return attestations;
+            case "positionsTab": return positionsTab;
+            case "nationalities": return nationalities;
+            case "grandLevels": return grandLevels;
+            case "discounts": return discounts;
 
-            default:
-                return null;
+            default: return null;
         }
 
     }

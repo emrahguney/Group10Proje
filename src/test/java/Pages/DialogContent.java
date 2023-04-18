@@ -98,10 +98,38 @@ public class DialogContent extends Parent{
     @FindBy(xpath = "//div[text()=' Name ']")
     public WebElement nameHeadBtn;
 
+    @FindBy(xpath = "(//input[@data-placeholder='Description'])[2]")
+    public WebElement dscrptnInputBox;
+    @FindBy(xpath = "(//input[@data-placeholder='Description'])[1]")
+    public WebElement dscrptnInput;
+
+    @FindBy(xpath = "(//input[@data-placeholder='Integration Code'])[2]")
+    public WebElement integrationCode;
+
+    @FindBy(xpath = "//input[@data-placeholder='Priority']")
+    public WebElement priority;
+
+    @FindBy(xpath = "(((//mat-form-field)//following-sibling::mat-slide-toggle)/label/span)[1]")
+    public WebElement slideToggleBtnGeneral;
+
 
     public void deleteItem(String searchText){
 
         sendKeysFunction(searchInput,searchText);
+        clickFunction(searchButton);
+
+
+        wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*") , 0));
+
+        clickFunction(deleteImageBtn);
+        clickFunction(deleteDialogBtn);
+
+
+    }
+
+    public void deleteDiscountedItem(String searchText){
+
+        sendKeysFunction(dscrptnInput,searchText);
         clickFunction(searchButton);
 
 
@@ -124,36 +152,25 @@ public class DialogContent extends Parent{
             case "searchInput": return searchInput;
             case "shortName":return shortNameInput;
             case "searchButton": return searchButton;
-            case "addGradeLevels":
-                return addGradeLevels;
-            case "orderInput":
-                return orderInput;
-            case "nextGradeBtn":
-                return nextGradeBtn;
-            case "nextGradeInput":
-                return nextGradeInput;
-            case "editGradeInput":
-                return editGradeInput;
-            case "deleteImageBtn":
-                return deleteImageBtn;
-            case "deleteDialogBtn":
-                return deleteDialogBtn;
-            case "slideToggleBtn":
-                return slideToggleBtn;
-            case "sizeBtn":
-                return sizeBtn;
-            case "selectSize":
-                return selectSize;
-            case "deleteGradeLevelNeg":
-                return deleteGradeLevelNeg;
-            case "deleteGradeLevelPos":
-                return deleteGradeLevelPos;
-            case "nextPageBtn":
-                return nextPageBtn;
-            case "nameHeadBtn":
-                return nameHeadBtn;
-
-
+            case "addGradeLevels": return addGradeLevels;
+            case "orderInput": return orderInput;
+            case "nextGradeBtn": return nextGradeBtn;
+            case "nextGradeInput": return nextGradeInput;
+            case "editGradeInput": return editGradeInput;
+            case "deleteImageBtn": return deleteImageBtn;
+            case "deleteDialogBtn": return deleteDialogBtn;
+            case "slideToggleBtn": return slideToggleBtn;
+            case "sizeBtn": return sizeBtn;
+            case "selectSize": return selectSize;
+            case "deleteGradeLevelNeg": return deleteGradeLevelNeg;
+            case "deleteGradeLevelPos": return deleteGradeLevelPos;
+            case "nextPageBtn": return nextPageBtn;
+            case "nameHeadBtn": return nameHeadBtn;
+            case "dscrptnInputBox": return dscrptnInputBox;
+            case "dscrptnInput": return dscrptnInput;
+            case "integrationCode": return integrationCode;
+            case "priority": return priority;
+            case "slideToggleBtnGeneral": return slideToggleBtnGeneral;
 
             default: return null;
         }
