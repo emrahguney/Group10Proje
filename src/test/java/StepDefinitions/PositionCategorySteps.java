@@ -61,6 +61,25 @@ public class PositionCategorySteps {
         for (String deleteButton : dialogButtons){
             dc.deleteItem(deleteButton);
         }
+    }
+
+    @And("user delete item from Grade levels")
+    public void userDeleteItemFromGradeLevels(DataTable dt) {
+
+        List<String> dialogButtons = dt.asList(String.class);
+
+        for (String deleteButton : dialogButtons) {
+            WebElement element = dc.getWebElement(deleteButton);
+
+            dc.clickFunction(element);
+        }
 
     }
+
+    @Then("negative test message should be displayed")
+    public void notDeleteMessageShouldBeDisplayed() {
+
+        dc.verifyContainsTextFunction(dc.notDeleteMessage, "not");
+    }
 }
+
