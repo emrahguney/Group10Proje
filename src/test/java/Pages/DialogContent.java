@@ -58,6 +58,45 @@ public class DialogContent extends Parent{
     @FindBy(xpath = "//div[contains(text(),'no data to display')]")
     public WebElement noDataToDisplay;
 
+    @FindBy(xpath = "//div[contains(text(),'not')]")
+    public WebElement notDeleteMessage;
+
+
+    @FindBy(xpath = "//ms-add-button[@tooltip='GRADE_LEVELS.TITLE.ADD']")
+    public WebElement addGradeLevels;
+
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='order']/input")
+    public WebElement orderInput;
+
+    @FindBy(xpath = "//span[text()='Next Grade']")
+    public WebElement nextGradeBtn;
+
+    @FindBy(xpath = "//mat-option[2]")
+    public WebElement nextGradeInput;
+
+    @FindBy(xpath = "(//tbody//ms-edit-button)[1]")
+    public WebElement editGradeInput;
+
+    @FindBy(xpath = "(//td/mat-slide-toggle)[1]")
+    public WebElement slideToggleBtn;
+
+    @FindBy(xpath = "//div[@class='mat-paginator-outer-container']//mat-select")
+    public WebElement sizeBtn;
+
+    @FindBy(xpath = "//div[@role='listbox']/mat-option[8]")
+    public WebElement selectSize;
+
+    @FindBy(xpath = "(//tbody/tr/td[text()='11th'])//following::ms-delete-button[1]")
+    public WebElement deleteGradeLevelNeg;
+
+    @FindBy(xpath = "(//tbody/tr/td[text()='1012AB'])//following::ms-delete-button[1]")
+    public WebElement deleteGradeLevelPos;
+
+    @FindBy(xpath = "//button[@aria-label='Next Page']")
+    public WebElement nextPageBtn;
+
+    @FindBy(xpath = "//div[text()=' Name ']")
+    public WebElement nameHeadBtn;
 
 
     public void deleteItem(String searchText){
@@ -85,6 +124,35 @@ public class DialogContent extends Parent{
             case "searchInput": return searchInput;
             case "shortName":return shortNameInput;
             case "searchButton": return searchButton;
+            case "addGradeLevels":
+                return addGradeLevels;
+            case "orderInput":
+                return orderInput;
+            case "nextGradeBtn":
+                return nextGradeBtn;
+            case "nextGradeInput":
+                return nextGradeInput;
+            case "editGradeInput":
+                return editGradeInput;
+            case "deleteImageBtn":
+                return deleteImageBtn;
+            case "deleteDialogBtn":
+                return deleteDialogBtn;
+            case "slideToggleBtn":
+                return slideToggleBtn;
+            case "sizeBtn":
+                return sizeBtn;
+            case "selectSize":
+                return selectSize;
+            case "deleteGradeLevelNeg":
+                return deleteGradeLevelNeg;
+            case "deleteGradeLevelPos":
+                return deleteGradeLevelPos;
+            case "nextPageBtn":
+                return nextPageBtn;
+            case "nameHeadBtn":
+                return nameHeadBtn;
+
 
 
             default: return null;

@@ -8,7 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 public class LeftNav extends Parent {
 
 
-    public LeftNav() {PageFactory.initElements(WD.getDriver(),this);}
+    public LeftNav() {
+        PageFactory.initElements(WD.getDriver(), this);
+    }
 
     @FindBy(xpath = "//span[text()='Human Resources']")
     private WebElement humanResources;
@@ -40,24 +42,38 @@ public class LeftNav extends Parent {
     private WebElement fields;
 
 
-    public WebElement getWebElement(String Button){
-
-        switch (Button)
-        {
-            case "setup" : return setup;
-            case "parameters" : return parameters;
-            case "fields" : return fields;
-            case "humanResources": return humanResources;
-            case "setupHumanResources": return setupHumanResources;
-            case "positionCategories": return positionCategories;
-            case "attestations": return attestations;
-            case "positionsTab" :return positionsTab;
-            case "nationalities": return nationalities;
+    @FindBy(xpath = "//span[text()='Grade Levels']")
+    private WebElement grandLevels;
 
 
-            default: return null;
+    public WebElement getWebElement(String Button) {
+
+        switch (Button) {
+            case "setup":
+                return setup;
+            case "parameters":
+                return parameters;
+            case "fields":
+                return fields;
+            case "humanResources":
+                return humanResources;
+            case "setupHumanResources":
+                return setupHumanResources;
+            case "positionCategories":
+                return positionCategories;
+            case "attestations":
+                return attestations;
+            case "positionsTab":
+                return positionsTab;
+            case "nationalities":
+                return nationalities;
+            case "grandLevels":
+                return grandLevels;
+
+            default:
+                return null;
         }
 
     }
 
-    }
+}
