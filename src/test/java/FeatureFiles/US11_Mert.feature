@@ -19,7 +19,7 @@ Feature: Bank Account Functionality
     And user sending the key in Dialog Content
 
       | nameInput | 1012AB  |
-      | ıban | 123456  |
+      | iban | 123456  |
 
     And click on the element in Dialog
 

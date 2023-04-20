@@ -113,7 +113,7 @@ public class DialogContent extends Parent{
     public WebElement slideToggleBtnGeneral;
 
     @FindBy(xpath = "//ms-text-field[@formcontrolname='iban']")
-    private WebElement ıban;
+    private WebElement iban;
 
     @FindBy(xpath = "(//span[text()='Currency'])[4]")
     private WebElement currency;
@@ -180,7 +180,7 @@ public class DialogContent extends Parent{
             case "integrationCode": return integrationCode;
             case "priority": return priority;
             case "slideToggleBtnGeneral": return slideToggleBtnGeneral;
-            case "ıban": return ıban;
+            case "ıban": return iban;
             case "currency": return currency;
             case "usd": return usd;
 
