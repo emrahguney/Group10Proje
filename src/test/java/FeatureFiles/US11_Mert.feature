@@ -68,7 +68,7 @@ Feature: Bank Account Functionality
       And user sending the key in Dialog Content
 
         | nameInput | fdsfds  |
-        | ıban | 4578312  |
+        | iban | 4578312  |
 
       And click on the element in Dialog
 
