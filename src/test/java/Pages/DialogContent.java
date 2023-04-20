@@ -112,6 +112,15 @@ public class DialogContent extends Parent{
     @FindBy(xpath = "(((//mat-form-field)//following-sibling::mat-slide-toggle)/label/span)[1]")
     public WebElement slideToggleBtnGeneral;
 
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='iban']")
+    private WebElement ıban;
+
+    @FindBy(xpath = "(//span[text()='Currency'])[4]")
+    private WebElement currency;
+
+    @FindBy(xpath = "//span[text()=' USD ']")
+    private WebElement usd;
+
 
     public void deleteItem(String searchText){
 
@@ -171,6 +180,9 @@ public class DialogContent extends Parent{
             case "integrationCode": return integrationCode;
             case "priority": return priority;
             case "slideToggleBtnGeneral": return slideToggleBtnGeneral;
+            case "ıban": return ıban;
+            case "currency": return currency;
+            case "usd": return usd;
 
             default: return null;
         }
