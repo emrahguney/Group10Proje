@@ -180,7 +180,7 @@ public class DialogContent extends Parent{
             case "integrationCode": return integrationCode;
             case "priority": return priority;
             case "slideToggleBtnGeneral": return slideToggleBtnGeneral;
-            case "ıban": return iban;
+            case "iban": return iban;
             case "currency": return currency;
             case "usd": return usd;
 
