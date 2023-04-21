@@ -16,18 +16,28 @@ Feature: Positions Functionality
       | addButton |
 
     And user sending the key in Dialog Content
-      | nameInput | SeniorJavaDevops |
-      | shortName | SenJavaDev       |
+      | nameInput | SeniorJavaDevop |
+      | shortName | SenJavaDevo     |
 
 
     And click on the element in Dialog
       | saveButton |
     Then success message should be displayed
 
+  Scenario:Adding Positions negative scenario
+    And click on the element in Dialog
+      | addButton |
+    And user sending the key in Dialog Content
+      | nameInput | SeniorJavaDevop |
+      | shortName | SenJavaDevo     |
+    And click on the element in Dialog
+      | saveButton |
+    Then already exists message should be displayed
+
   Scenario: Editing Positions
 
     And user sending the key in Dialog Content
-      | searchInput | SeniorJavaDevops |
+      | searchInput | SeniorJavaDevop |
 
     And user click on search button
 
@@ -40,6 +50,7 @@ Feature: Positions Functionality
 
     Then success message should be displayed
 
+
   Scenario: Deleting Positions
 
     And user sending the key in Dialog Content
@@ -49,3 +60,10 @@ Feature: Positions Functionality
       | JuniorJavaDevops |
 
     Then success message should be displayed
+
+  Scenario: Deleting Positions negative Test
+    And user sending the key in Dialog Content
+      | searchInput | JuniorJavaDevops |
+    And user click on search button
+
+    Then there is no data to display should be displayed
