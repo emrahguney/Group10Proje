@@ -33,7 +33,7 @@ public class DialogContent extends Parent{
     private WebElement searchButton;
 
     @FindBy(xpath = "(//ms-delete-button/button)[1]")
-    private WebElement deleteImageBtn;
+    public WebElement deleteImageBtn;
     @FindBy(xpath="//button[@type='submit']")
     public WebElement deleteDialogBtn;
 
@@ -142,6 +142,14 @@ public class DialogContent extends Parent{
     @FindBy(xpath = "//mat-paginator[contains(@class,'mat-paginator')]//button[3]")
     public WebElement NextButton;
 
+    @FindBy(xpath="//div[contains(text(),'already')]")
+    public WebElement already;
+
+    @FindBy(xpath="//ms-text-field[@formcontrolname='code']/input")
+    public WebElement codeInput;
+
+    @FindBy(xpath = "//td[text()='math']")
+    public WebElement math;
 
     public void deleteItem(String searchText){
 
@@ -208,6 +216,9 @@ public class DialogContent extends Parent{
             case "locationType" : return locationType;
             case "laboratory":return laboratory;
             case "activeButton":return activeButton;
+            case "codeInput": return codeInput;
+            case "math": return math;
+
 
 
 
@@ -227,6 +238,14 @@ public class DialogContent extends Parent{
     public void clickOnSearchButton(){
 
         searchButton.click();
+    }
+
+    public void FoundElement(WebElement element) {
+        try {
+            element.click();
+        } catch (Exception e) {
+            System.out.println("Bug: Element not found ");
+        }
     }
 
 }
