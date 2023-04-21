@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.List;
+
 public class DialogContent extends Parent{
 
     public DialogContent() {
@@ -33,7 +35,7 @@ public class DialogContent extends Parent{
     @FindBy(xpath = "(//ms-delete-button/button)[1]")
     private WebElement deleteImageBtn;
     @FindBy(xpath="//button[@type='submit']")
-    private WebElement deleteDialogBtn;
+    public WebElement deleteDialogBtn;
 
     @FindBy(xpath="//ms-add-button[contains(@tooltip,'ADD')]//button")
     public WebElement addButton;
@@ -120,6 +122,25 @@ public class DialogContent extends Parent{
 
     @FindBy(xpath = "//span[text()=' USD ']")
     private WebElement usd;
+    @FindBy (xpath = "//ms-integer-field[@formcontrolname='capacity']/input")
+    private WebElement capacityInput;
+    @FindBy(xpath = "(//mat-form-field[contains(@class,'mat-form-field')]//div[contains(@class,'mat-select-value')])[2]")
+    public WebElement locationType;
+    @FindBy(xpath = "//mat-option/span[text()=' Laboratory ']")
+    public WebElement laboratory;
+    @FindBy(xpath = "//mat-slide-toggle[@formcontrolname='active']//span[@class='mat-slide-toggle-bar']")
+    public WebElement activeButton;
+    @FindBy(xpath = "//td[@role='cell'][2]")
+    public List<WebElement> registerListName;
+    @FindBy(xpath = "//ms-edit-button[@class='ng-star-inserted']")
+    public List<WebElement> editButtonList;
+    @FindBy(xpath = "(//mat-paginator[contains(@class,'mat-paginator')]//span[@class='mat-button-wrapper'])[3]")
+    public WebElement nextPage;
+    @FindBy(xpath = "//ms-delete-button/button")
+    public List<WebElement> deleteButtonList;
+
+    @FindBy(xpath = "//mat-paginator[contains(@class,'mat-paginator')]//button[3]")
+    public WebElement NextButton;
 
 
     public void deleteItem(String searchText){
@@ -159,7 +180,7 @@ public class DialogContent extends Parent{
             case "saveButton": return saveButton;
             case "editButton": return editButton;
             case "searchInput": return searchInput;
-            case "shortName":return shortNameInput;
+            case "shortNameInput":return shortNameInput;
             case "searchButton": return searchButton;
             case "addGradeLevels": return addGradeLevels;
             case "orderInput": return orderInput;
@@ -183,6 +204,12 @@ public class DialogContent extends Parent{
             case "iban": return iban;
             case "currency": return currency;
             case "usd": return usd;
+            case "capacityInput" : return capacityInput;
+            case "locationType" : return locationType;
+            case "laboratory":return laboratory;
+            case "activeButton":return activeButton;
+
+
 
             default: return null;
         }
