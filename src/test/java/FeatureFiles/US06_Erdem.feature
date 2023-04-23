@@ -1,69 +1,55 @@
-Feature: Positions Functionality
+Feature: Subject Category Functionality
 
   Background:
     Given Navigate to Campus
     When Enter username and password and click login button
     Then User should login succesfully
-
     And click on the element in LeftNav
-      | humanResources      |
-      | setupHumanResources |
-      | positionsTab        |
+      | educationTab      |
+      | setupEdu          |
+      | subjectCategories |
 
-  Scenario: Adding positions
-
+  Scenario: Adding Subject Category
     And click on the element in Dialog
       | addButton |
-
     And user sending the key in Dialog Content
-      | nameInput      | SeniorJavaDevop |
-      | shortNameInput | SenJavaDevo     |
-
-
+      | nameInput | CucumberBDD_Batch5TR |
+      | codeInput | 17769                |
     And click on the element in Dialog
       | saveButton |
     Then success message should be displayed
 
-  Scenario:Adding Positions negative scenario
+  Scenario: Adding Subject Category Negative
     And click on the element in Dialog
       | addButton |
     And user sending the key in Dialog Content
-      | nameInput      | SeniorJavaDevop |
-      | shortNameInput | SenJavaDevo     |
+      | nameInput | CucumberBDD_Batch5TR |
+      | codeInput | 17769                |
     And click on the element in Dialog
       | saveButton |
     Then already exists message should be displayed
 
-  Scenario: Editing Positions
 
+  Scenario: Editing Subject Category
     And user sending the key in Dialog Content
-      | searchInput | SeniorJavaDevop |
-
+      | searchInput | CucumberBDD_Batch5TR |
     And user click on search button
-
     And edit item which added in first scenario
-      | nameInput      | JuniorJavaDevops |
-      | shortNameInput | JJD              |
-
+      | nameInput | CucumberBDD_Batch5UK |
     And click on the element in Dialog
       | saveButton |
-
     Then success message should be displayed
 
-
-  Scenario: Deleting Positions
-
-    And user sending the key in Dialog Content
-      | searchInput | JuniorJavaDevops |
-
+  Scenario: Deleting Subject Category
     And user delete item from Dialog Content
-      | JuniorJavaDevops |
-
+      | CucumberBDD_Batch5UK |
     Then success message should be displayed
 
-  Scenario: Deleting Positions negative Test
+  Scenario: Deleting Subject Category Negative
     And user sending the key in Dialog Content
-      | searchInput | JuniorJavaDevops |
+      | searchInput | CucumberBDD_Batch5UK |
     And user click on search button
-
     Then there is no data to display should be displayed
+
+
+
