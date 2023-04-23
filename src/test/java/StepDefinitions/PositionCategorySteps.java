@@ -2,10 +2,13 @@ package StepDefinitions;
 
 import Pages.DialogContent;
 import Pages.LeftNav;
+import Utilities.WD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.awt.*;
 import java.util.List;
@@ -41,6 +44,29 @@ public class PositionCategorySteps {
             WebElement element=dc.getWebElement(keys.get(i).get(0));
             dc.sendKeysFunction(element, keys.get(i).get(1));
 
+        }
+    }
+    @And("click esc button")
+    public void clickEscButton() {
+        new Actions(WD.getDriver()).sendKeys(Keys.ESCAPE).perform();
+    }
+    @And("user delete item from Document Types")
+    public void userDeleteFromDocumentTypes(DataTable dt) {
+        List<List<String>> items=dt.asLists(String.class);
+
+        for (int i = 0; i < items.size(); i++) {
+            dc.deleteItemDocument(items.get(i));
+        }
+        dc.clickFunction(dc.deleteImageBtn);
+        dc.clickFunction(dc.deleteDialogBtn);
+
+    }
+    @And("user delete item from Document Types Negative")
+    public void userDeleteFromDocumentTypesNegative(DataTable dt) {
+        List<List<String>> items=dt.asLists(String.class);
+
+        for (int i = 0; i < items.size(); i++) {
+            dc.deleteItemDocument(items.get(i));
         }
     }
 
