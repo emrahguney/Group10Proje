@@ -151,6 +151,13 @@ public class DialogContent extends Parent{
     @FindBy(xpath = "//td[text()='math']")
     public WebElement math;
 
+    @FindBy(css = "div[id*='mat-select-value']")
+    public WebElement state;
+    @FindBy(xpath = "(//div[contains(@id, 'mat-select-value')])[3]")
+    public WebElement addState;
+    @FindBy(xpath = "//span[text()=' Student Registration ']")
+    public WebElement stateStudentRegistration;
+
     public void deleteItem(String searchText){
 
         sendKeysFunction(searchInput,searchText);
@@ -175,6 +182,21 @@ public class DialogContent extends Parent{
 
         clickFunction(deleteImageBtn);
         clickFunction(deleteDialogBtn);
+
+
+    }
+    public void deleteItemDocument(List<String> deleteItems){
+
+        sendKeysFunction(searchInput,deleteItems.get(0));
+        clickFunction(state);
+        clickFunction(getWebElement(deleteItems.get(1)));
+        clickFunction(searchButton);
+
+
+        wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*") , 0));
+
+        //clickFunction(deleteImageBtn);
+        //clickFunction(deleteDialogBtn);
 
 
     }
@@ -218,6 +240,10 @@ public class DialogContent extends Parent{
             case "activeButton":return activeButton;
             case "codeInput": return codeInput;
             case "math": return math;
+
+            case "state": return state;
+            case "addState": return addState;
+            case "stateStudentRegistration": return stateStudentRegistration;
 
 
 
