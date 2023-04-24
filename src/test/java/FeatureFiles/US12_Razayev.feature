@@ -4,20 +4,19 @@ Feature: Add Grade Levels Functionality
     Given Navigate to Campus
     When Enter username and password and click login button
     Then User should login succesfully
-
-  Scenario: Admin User should be able to Add Grade Levels positive test
-
     And click on the element in LeftNav
       | setup       |
       | parameters  |
       | grandLevels |
 
+  Scenario: Admin User should be able to Add Grade Levels positive test
+
     And click on the element in Dialog
       | addGradeLevels |
 
     And user sending the key in Dialog Content
-      | nameInput  | 1012AB |
-      | shortName  | 1012AB |
+      | nameInput  | 1012AB34 |
+      | shortNameInput  | 1012AB34 |
       | orderInput | 12     |
 
     And click on the element in Dialog
@@ -30,18 +29,13 @@ Feature: Add Grade Levels Functionality
 
   Scenario: Admin User should be able to Add Grade Levels negative test
 
-    And click on the element in LeftNav
-      | setup       |
-      | parameters  |
-      | grandLevels |
-
     And click on the element in Dialog
       | addGradeLevels |
 
     And user sending the key in Dialog Content
-      | nameInput  | 1012AB |
-      | shortName  | 1012AB |
-      | orderInput | 14     |
+      | nameInput  | 1012AB34 |
+      | shortNameInput  | 1012AB34 |
+      | orderInput | 12     |
 
     And click on the element in Dialog
       | nextGradeBtn   |
@@ -52,16 +46,11 @@ Feature: Add Grade Levels Functionality
 
   Scenario: Admin User should be able to Edit Grade Levels positive test
 
-    And click on the element in LeftNav
-      | setup       |
-      | parameters  |
-      | grandLevels |
+ When Search name as "1012AB34" and click on the edit button
 
-    And click on the element in Dialog
-      | editGradeInput |
+    And Edit item which  added in scenario
+      | nameInput | Manager1012AB |
 
-    And user sending the key in Dialog Content
-      | orderInput | 7 |
 
     And click on the element in Dialog
       | saveButton |
@@ -71,49 +60,18 @@ Feature: Add Grade Levels Functionality
 
   Scenario: Admin User should be able to Delete Grade Levels positive test
 
-    And click on the element in LeftNav
-      | setup       |
-      | parameters  |
-      | grandLevels |
 
-    And click on the element in Dialog
-      | nameHeadBtn |
+    When Search name as "Manager1012AB" and click on the delete button
 
-    And user delete item from Grade levels
-      | deleteGradeLevelPos |
-
-    And click on the element in Dialog
-
-      | deleteDialogBtn |
-
-    Then success message should be displayed
-
+    Then Click on the delete button
+    And success message should be displayed
 
   Scenario: Admin User should be able to Delete Grade Levels negative test
 
-    And click on the element in LeftNav
-      | setup       |
-      | parameters  |
-      | grandLevels |
 
-    And click on the element in Dialog
-      | nameHeadBtn |
-
-    And user delete item from Grade levels
-      | deleteGradeLevelNeg |
-
-    And click on the element in Dialog
-
-      | deleteDialogBtn |
-
-    Then negative test message should be displayed
+    Then There is no name as "Manager1012AB" to display should be displayed
 
   Scenario: Admin User should have an option to activate and deactivate grade levels.
-
-    And click on the element in LeftNav
-      | setup       |
-      | parameters  |
-      | grandLevels |
 
     And click on the element in Dialog
       | slideToggleBtn |
