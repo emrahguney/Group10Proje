@@ -114,10 +114,10 @@ public class DialogContent extends Parent{
     @FindBy(xpath = "(((//mat-form-field)//following-sibling::mat-slide-toggle)/label/span)[1]")
     public WebElement slideToggleBtnGeneral;
 
-    @FindBy(xpath = "//ms-text-field[@formcontrolname='iban']")
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='iban']/input")
     private WebElement iban;
 
-    @FindBy(xpath = "(//span[text()='Currency'])[4]")
+    @FindBy(xpath = "(//mat-select[@role='combobox']//span[text()='Currency'])[2]")
     private WebElement currency;
 
     @FindBy(xpath = "//span[text()=' USD ']")
@@ -157,6 +157,9 @@ public class DialogContent extends Parent{
     public WebElement addState;
     @FindBy(xpath = "//span[text()=' Student Registration ']")
     public WebElement stateStudentRegistration;
+
+    @FindBy(xpath = "//ms-text-field[@placeholder='GENERAL.FIELD.NAME']/input")
+    private WebElement nameInput2;
 
     public void deleteItem(String searchText){
 
@@ -244,7 +247,7 @@ public class DialogContent extends Parent{
             case "state": return state;
             case "addState": return addState;
             case "stateStudentRegistration": return stateStudentRegistration;
-
+            case "nameInput2": return nameInput2;
 
 
 
