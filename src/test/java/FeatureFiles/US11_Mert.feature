@@ -4,14 +4,12 @@ Feature: Bank Account Functionality
     Given Navigate to Campus
     When Enter username and password and click login button
     Then User should login succesfully
-
-  Scenario: Admin User should be able to Add Bank Account to positive test
-
     And click on the element in LeftNav
       | setup       |
       | parameters  |
       | bankaccount  |
 
+  Scenario: Admin User should be able to Add Bank Account to positive test
     And click on the element in Dialog
 
       | addButton |
@@ -31,10 +29,6 @@ Feature: Bank Account Functionality
 
   Scenario: Admin User should be able to Add Bank Account to negative test
 
-    And click on the element in LeftNav
-      | setup       |
-      | parameters  |
-      | bankaccount  |
 
     And click on the element in Dialog
 
@@ -56,19 +50,16 @@ Feature: Bank Account Functionality
 
     Scenario: Admin User should be able to Edit Bank Account to positive test
 
-      And click on the element in LeftNav
-        | setup       |
-        | parameters  |
-        | bankaccount  |
-
-      And click on the element in Dialog
-
-        | editButton |
-
       And user sending the key in Dialog Content
 
-        | nameInput | fdsfds  |
-        | iban | 4578312  |
+        | nameInput2 | 1012AB  |
+
+      And click on the element in Dialog
+      |searchButton|
+
+
+      And  edit item which added in first scenario
+      |nameInput|Account2763|
 
       And click on the element in Dialog
 
@@ -78,32 +69,18 @@ Feature: Bank Account Functionality
 
   Scenario: Admin User should be able to Delete Bank Account to positive test
 
-    And click on the element in LeftNav
-      | setup       |
-      | parameters  |
-      | bankaccount  |
-
-    And user sending the key in Dialog Content
-
-      | searchInput       |1012AB|
-
-    And user click on search button
 
     And user delete item from Dialog Content
+      |Account2763|
 
-      |1012AB|
 
     Then success message should be displayed
 
   Scenario: Admin User should be able to Delete Bank Account to negative test
 
-    And click on the element in LeftNav
-      | setup       |
-      | parameters  |
-      | bankaccount  |
 
     And user sending the key in Dialog Content
-      | searchInput | 1012AB |
+      | searchInput | Account2763 |
 
     And user click on search button
 
