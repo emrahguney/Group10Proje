@@ -4,13 +4,13 @@ Feature: School Department Functionality
     Given Navigate to Campus
     When Enter username and password and click login button
     Then User should login succesfully
-
-  Scenario: Admin User should be able to Add School Departments Positive Test
-
     And click on the element in LeftNav
       |setup       |
       |schoolSetup |
       |Departments |
+  Scenario: Admin User should be able to Add School Departments Positive Test
+
+
 
     And click on the element in Dialog
       |addButton |
@@ -25,10 +25,7 @@ Feature: School Department Functionality
     Then success message should be displayed
 
   Scenario: Admin User should be able to Add School Departments Negative Test
-    And click on the element in LeftNav
-      |setup |
-      |schoolSetup |
-      |Departments |
+
 
     And click on the element in Dialog
       |addButton |
@@ -43,26 +40,18 @@ Feature: School Department Functionality
     Then there is already department message should be displayed
 
   Scenario: Admin User should be able to Edit School Departments
-    And click on the element in LeftNav
-      |setup |
-      |schoolSetup |
-      |Departments |
-
-    And edit item and click save button
-
+    And Search name as "Law" and click on the edit button
+    And Edit item which  added in scenario
+      | nameInput | Justice |
+    And click on the element in Dialog
+      |saveButton|
     And success message should be displayed
 
   Scenario: Admin User should be able to Delete School Departments Positive Test
-    And click on the element in LeftNav
-      | setup       |
-      | schoolSetup |
-      | Departments |
-    When user delete item from school department list
-    Then success message should be displayed
+    When Search name as "Justice" and click on the delete button
+    Then Click on the delete button
+    And success message should be displayed
+
 
   Scenario: Admin User should be able to Delete School Departments Negative Test
-    And click on the element in LeftNav
-      | setup       |
-      | schoolSetup |
-      | Departments |
-    Then No result should found
+    Then There is no name as "Justice" to display should be displayed
