@@ -43,7 +43,6 @@ public class PositionCategorySteps {
         for (int i = 0; i < keys.size(); i++) {
             WebElement element=dc.getWebElement(keys.get(i).get(0));
             dc.sendKeysFunction(element, keys.get(i).get(1));
-
         }
     }
     @And("click esc button")
@@ -59,7 +58,6 @@ public class PositionCategorySteps {
         }
         dc.clickFunction(dc.deleteImageBtn);
         dc.clickFunction(dc.deleteDialogBtn);
-
     }
     @And("user delete item from Document Types Negative")
     public void userDeleteFromDocumentTypesNegative(DataTable dt) {
@@ -91,7 +89,6 @@ public class PositionCategorySteps {
 
     @And("user delete item from Grade levels")
     public void userDeleteItemFromGradeLevels(DataTable dt) {
-
         List<String> dialogButtons = dt.asList(String.class);
 
         for (String deleteButton : dialogButtons) {
@@ -99,12 +96,10 @@ public class PositionCategorySteps {
 
             dc.clickFunction(element);
         }
-
     }
 
     @Then("negative test message should be displayed")
     public void notDeleteMessageShouldBeDisplayed() {
-
         dc.verifyContainsTextFunction(dc.notDeleteMessage, "not");
     }
 }

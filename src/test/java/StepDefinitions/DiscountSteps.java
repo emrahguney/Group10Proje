@@ -18,9 +18,7 @@ public class DiscountSteps {
 
     @And("user removing zero from priority box")
     public void userRemovingZeroFromPriorityBox() {
-
         dc.priority.clear();
-
     }
 
     @And("edit description name")
@@ -36,7 +34,6 @@ public class DiscountSteps {
         List<List<String>> keys = dt.asLists(String.class);
 
         for (int i = 0; i < keys.size(); i++) {
-
             WebElement element = dc.getWebElement(keys.get(i).get(0));
             dc.sendKeysFunction(element,keys.get(i).get(1));
         }
@@ -44,7 +41,6 @@ public class DiscountSteps {
 
     @And("user delete discounted account")
     public void userDeleteDiscountedAccount(DataTable dt) {
-
         List<String> dialogButtons = dt.asList(String.class);
 
         for (String button :dialogButtons) {

@@ -37,7 +37,7 @@ Feature: School Department Functionality
     And click on the element in Dialog
       |saveButton |
 
-    Then there is already department message should be displayed
+    Then already exists message should be displayed
 
   Scenario: Admin User should be able to Edit School Departments
     And Search name as "Law" and click on the edit button

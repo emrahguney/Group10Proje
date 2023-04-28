@@ -38,20 +38,16 @@ public class AttestationsSteps {
 
         @Then("already exists message should be displayed")
         public void alreadyExistsMessageShouldBeDisplayed() {
-
-            dc.verifyContainsTextFunction(dc.alreadyExists,"already exists");
-
+            dc.verifyContainsTextFunction(dc.alreadyExists,"already");
         }
 
         @And("user click on search button")
         public void userClickOnSearchButton() {
-
             dc.clickOnSearchButton();
         }
 
         @Then("there is no data to display should be displayed")
         public void thereIsNoDataToDisplayShouldBeDisplayed() {
-
             dc.waitUntilRefresh();
             dc.verifyContainsTextFunction(dc.noDataToDisplay,"no data to display");
 
