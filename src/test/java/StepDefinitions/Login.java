@@ -13,7 +13,6 @@ public class Login {
     public void navigateToCampus() {
         WD.getDriver().get("https://test.mersys.io/");
         WD.getDriver().manage().window().maximize();
-
     }
 
     @When("Enter username and password and click login button")
@@ -26,7 +25,6 @@ public class Login {
 
     @Then("User should login succesfully")
     public void userShouldLoginSuccesfully() {
-
         dc.verifyContainsTextFunction(dc.txtTechnoStudy, "Techno Study");
     }
 }

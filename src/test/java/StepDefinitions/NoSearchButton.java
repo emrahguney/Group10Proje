@@ -22,15 +22,10 @@ public class NoSearchButton {
     @When("Search name as {string} and click on the edit button")
     public void searchNameAsAndClickOnTheEditButton(String name) {
         {
-
             dc.waitUntilRefresh();
-
-
-
 
             String text = "";
             do {
-
                 dc.waitUntilRefresh();
 
                 for (int j = 0; j < dc.registerListName.size(); j++) {
@@ -41,7 +36,6 @@ public class NoSearchButton {
                     } else if (dc.registerListName.get(j).getText().contains(name)) {
 
                         text = dc.registerListName.get(j).getText();
-
                         dc.clickFunction(dc.editButtonList.get(j));
 
                     }
@@ -58,7 +52,6 @@ public class NoSearchButton {
     @And("Edit item which  added in scenario")
     public void editItemWhichAddedInScenario(DataTable dt) {
         wait.until(ExpectedConditions.visibilityOf(dc.nameInput));
-
 
         List<List<String>> keys = dt.asLists(String.class);
 
@@ -104,14 +97,10 @@ public class NoSearchButton {
     public void thereIsNoNameAsToDisplayShouldBeDisplayed(String name) {
         dc.waitUntilRefresh();
         List<String> Names=new ArrayList<>();
-
-
         String text = "empty";
 
         do {
             dc.waitUntilRefresh();
-
-
 
             for (int j = 0; j < dc.registerListName.size(); j++) {
                 Names.add(dc.registerListName.get(j).getText());
@@ -123,16 +112,13 @@ public class NoSearchButton {
 
                 }
             }if(!text.contains(name)){
-
                 dc.clickFunction(dc.nextPage);
-
             }
 
         } while ((!dc.NextButton.getAttribute("class").contains("disabled")) && !text.contains(name));//(!dc.NextButton.getAttribute("class").contains("disabled"))//!text.contains(name)
         for (int i = 0; i <dc.registerListName.size() ; i++) {
             Names.add(dc.registerListName.get(i).getText());
         }
-
 
         for (String a : Names){
             Assert.assertFalse(a.contains(name));
